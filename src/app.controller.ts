@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Delete, Get, Param, Put } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller('api')
@@ -29,7 +29,7 @@ export class AppController {
     return this.appService.enableUser(params.uid);
   }
 
-  @Get('/user/delete/:uid')
+  @Delete('/user/delete/:uid')
   deleteUser(@Param() params): object {
     return this.appService.deleteUser(params.uid);
   }

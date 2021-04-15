@@ -30,6 +30,8 @@ export class AppService {
   async deleteUser(uid:string): Promise<string> {
     try {
       await admin.auth().deleteUser(uid);
+      console.log('deleted');
+      
       return 'User deleted successfully';  
       
     } catch (error) {
